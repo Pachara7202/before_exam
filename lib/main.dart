@@ -1,5 +1,5 @@
 import 'package:final_exam_640710543/answer1.dart';
-import 'package:final_exam_640710543/answer_portal.dart';
+import 'package:final_exam_640710543/answer2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Answer1());
+    return MaterialApp(home: Answer2());
   }
 }

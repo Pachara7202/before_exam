@@ -7,33 +7,39 @@ class Answer1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profile Page"),
-        backgroundColor: const Color.fromARGB(255, 97, 82, 63),
-        centerTitle: true,
+        title: const Text("โปรไฟล์ผู้ใช้"),
+        backgroundColor: Colors.blue,
       ),
       body: Column(
         children: [
           Container(
-            color: const Color.fromARGB(255, 213, 157, 72),
             width: double.infinity,
-            height: 300,
+            height: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 150,
-                  height: 150,
+                  width: 80,
+                  height: 80,
                   decoration: const BoxDecoration(
-                      shape: BoxShape.rectangle,
+                      shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 75, 68, 68),
                       image: DecorationImage(
                         image: NetworkImage(
-                            'https://i.ytimg.com/vi/0C8KP8oyi4E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC9y66GXG_rtN8WJ1YUFr3I_Zfg8g'),
+                            'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png'),
                         fit: BoxFit.cover,
                       )),
                 ),
                 const SizedBox(height: 10),
-                const Text("pacharuu.e",
-                    style: TextStyle(color: Colors.white, fontSize: 18)),
+                const Text("ชื่อผู้ใช้: John Doe",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold)),
+                const Text(
+                  "อีเมล: johndoe@example.com",
+                  style: TextStyle(color: Colors.grey, fontSize: 14),
+                )
               ],
             ),
           ),
@@ -42,14 +48,26 @@ class Answer1 extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ProfileItem(icon: Icons.person, text: "พชร เอกวิชญพงศ์"),
-                ProfileItem(icon: Icons.email, text: "pachara7202@gmail.com"),
-                ProfileItem(icon: Icons.phone, text: "084-922-7202"),
+                ProfileItem(icon: Icons.settings, text: "การตั้งค่า"),
+                ProfileItem(icon: Icons.key, text: "เปลี่ยนรหัสผ่าน"),
                 ProfileItem(
-                    icon: Icons.location_on, text: "Nakhon Pathom, 26/4"),
+                    icon: Icons.question_mark_sharp, text: "ความเป็นส่วนตัว"),
               ],
             ),
           ),
+          const SizedBox(height: 10),
+          Container(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text("แก้ไขโปรไฟล์")),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text("ออกจากระบบ")),
+                ],
+              ))
         ],
       ),
     );
